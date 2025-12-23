@@ -41,8 +41,9 @@ DPResult solveSchedulingDP(const vector<Job>& jobs, int M) {
         if (dp[S] == INF) continue;
 
         for (int j = 0; j < n; ++j) {
+            // if j in group S 
             if (S & (1 << j)) continue;
-
+            // else, we make new group S2 with j
             int S2 = S | (1 << j);
 
             // C_j לפי הנוסחה
